@@ -2,11 +2,15 @@
 ADMIN_NAME = 'ADMIN';
 ADMIN_PWD = '@ADMIN';
 if(!isset($_GET['login'])){
-    if($_GET['login'] == 'submit'){
+    if($_COOKIE['utype'] == 'user'){
         //CODE
     }
-    else($_GET['login'] == 'submit_admin'){
+    elseif($_COOKIE['utype'] == 'admin'){
         //Code
+    }
+    else
+    {
+
     }
 }
 ?>

@@ -43,11 +43,12 @@
   </body>
 </html>
 <?php 
+session_start();
     if($_SERVER['METHOD'] == 'POST')
     { 
-        if(isset($_POST['submit']))
-        {
-            header('location:validate.php?login=user'); 
-        } 
+      setcookie('uname',$_POST['email'],time() + 3600);
+      setcookie('pwd',$_POST['pwd'],time() + 3600);
+      setcookie('utype','user',time() + 3600);
+      header('location:validate.php?login=1');  
     } 
 ?>

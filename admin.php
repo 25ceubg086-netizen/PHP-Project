@@ -39,5 +39,13 @@
 
  
 </html>
-<?php if($_SERVER['METHOD'] == 'POST'){ if(isset($_POST['submit'])) {
-header('location:validate.php?login=admin'); } } ?>
+<?php 
+session_start();
+    if($_SERVER['METHOD'] == 'POST')
+    { 
+      setcookie('uname',$_POST['email'],time() + 3600);
+      setcookie('pwd',$_POST['pwd'],time() + 3600);
+      setcookie('utype','admin',time() + 3600);
+      header('location:validate.php?login=1');  
+    } 
+?>
