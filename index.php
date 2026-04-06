@@ -42,5 +42,12 @@
     </a>
   </body>
 </html>
-<?php if($_SERVER['METHOD'] == 'POST'){ if(isset($_POST['submit'])) {
-header('location:validate.php?login=user'); } } ?>
+<?php 
+    if($_SERVER['METHOD'] == 'POST')
+    { 
+        if(isset($_POST['submit']))
+        {
+            header('location:validate.php?login=user'); 
+        } 
+    } 
+?>
