@@ -1,10 +1,13 @@
 <html>
-  <body>
+  <body style="background-color:gray">
     <h1 style="text-align: center; text-shadow: 0 0 5px blue">
-      <i><b>Login</b></i>
+      <i><b>Login As Admin</b></i>
     </h1>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-      <table
+     <fieldset style="
+          background:linear-gradient(10deg,rgb(100,100,100) ,rgb(255,255,255) );
+     ">
+       <table
         style="
           width: 100%;
           text-align: left;
@@ -34,18 +37,22 @@
         id="reset"
         style="margin-top: 4px; box-shadow: 0 0 7px #f00"
       />
+     </fieldset>
     </form>
+    <a href="index.php" style="box-shadow: 0 0 5px black">
+      <button>Login As User</button>
+    </a>
   </body>
 
  
 </html>
 <?php 
-session_start();
-    if($_SERVER['METHOD'] == 'POST')
+require_once('config.php');
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
     { 
-      setcookie('uname',$_POST['email'],time() + 3600);
+      setcookie('un',$_POST['name'],time() + 3600);
       setcookie('pwd',$_POST['pwd'],time() + 3600);
       setcookie('utype','admin',time() + 3600);
-      header('location:validate.php?login=1');  
+      header('location:validate.php?login=admin');  
     } 
 ?>
