@@ -19,7 +19,7 @@
         "
       >
         <tr>
-          <td><label for="email">Name :</label></td>
+          <td><label for="email">Email :</label></td>
           <td><input type="email" name="email" id="email" required /></td>
         </tr>
         <tr style="border: 1px solid">
